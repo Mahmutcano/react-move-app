@@ -17,7 +17,7 @@ const NavigateBar = ({
     }
   },[activeGenre]);
   return (
-    <div>
+    <div className="popularNavıG">
       <ul className="flex flex-wrap font-bold text-gray-500 dark:text-gray-400 mt-3">
         <li className="mr-2">
           <button
