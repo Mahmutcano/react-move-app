@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { data } from "autoprefixer";
 import {BiSearch} from 'react-icons/bi'
 import {MdOutlineClear} from 'react-icons/md'
 
 
 const SearchBar = () => {
   const [search, setSearch] = useState([]);
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState("");
   const API_KEY = "17238172b25c3a589bc302e2e5949b51";
+  const IMAGE_PATH = "https://image.tmdb.org/t/p/w300";
 
   const searchMovie = async (e) => {
     e.preventDefault();
@@ -24,7 +24,12 @@ const SearchBar = () => {
       data: { results },
     } = await axios.get(API_URL);
     setMovie(results);
+
   };
+
+  useEffect((e) => {
+    searchMovie(e);
+  }, []);
 
   
   console.log(movie);
@@ -33,49 +38,45 @@ const SearchBar = () => {
     setSearch([]);
     setMovie("");
   };
+
   return (
     <>
-      <div className="w-[400px] rounded-xl bg-gray-50 p-6">
-        <div className="grid gap-y-4">
-          <div className="flex gap-x-2">
-            <label htmlFor="query" className="flex-1 relative group block">
-              <input
-                name="query"
-                type="text"
-                onChange={(e) => setSearch(e.target.value)}
-                required
-                className="h-14 px-4 border-2 border-gray-200 rounded-xl w-full transition-colors hover:border-primary-brand-color focus:border-primary-brand-color outline-none peer text-sm pt-2"
-              />
-              <span className="absolute top-0 left-0 h-full px-4 flex items-center text-sm text-gray-500 transition-all peer-focus:h-7 peer-focus:text-primary-brand-color peer-focus:text-xs peer-valid:h-7 peer-valid:text-primary-brand-color peer-valid:text-xs">
-                Arama Yap
-              </span>
-            </label>
-          </div>
-          <button
-            onClick={(e) => searchMovie(e)}
-            type="submit"
-            className="bg-brand-dark-color text-brand-white-color transition-colors hover:bg-primary-brand-color hover:text-white h-12 flex items-center justify-center rounded-xl w-full text-sm font-semibold "
-          >
-            Ara
-          </button>
-        </div>
-        <div className="">
+    <div className="search">
+      <div className="searchInputs">
+        <input
+          type="text"
+          placeholder=""
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <div className="searchIcon">
           {movie.length === 0 ? (
-            <BiSearch />
+            <BiSearch onClick={(e) => searchMovie(e)} type="submit" className="transition duration-150 ease-in-out"/>
           ) : (
-            <MdOutlineClear id="clearBtn" onClick={clearInput} />
+            <MdOutlineClear id="clearBtn" onClick={clearInput} className="transition delay-150 duration-300 ease-in-out"/>
           )}
         </div>
-        <div className="flex flex-col border-2">
-          {movie.map((movie, index) => (
-              <div key={movie.id}>
-                <h1 className="pl-8 pr-2 py-1 border-b-2 border-gray-100 relative cursor-pointer hover:bg-yellow-50 hover:text-gray-900">
-                  {movie.original_title}
-                </h1>
-              </div>
-            ))}
-        </div>
       </div>
+      {movie.length !== 0 && (
+        <div className="dataResult z-50">
+          {movie.slice(0,4).map((movie, key) => {
+            return (
+              <div className="flex pl-5 border-2 border-white rounded-lg bg-gray-50 hover:bg-brand-dark-color hover:opacity-300 mt-1 transition duration-150 ease-in-out z-50"  key={movie.id}>
+                <div>
+                <img
+                    src={`${IMAGE_PATH}${movie.poster_path}`}
+                    alt="Slider"
+                    className="border-2 rounded-[10px] w-7 mt-1"
+                  />
+                </div>
+                <p className="pt-2 px-3 border-1 h-12 text-black">{movie.original_title} </p>
+              </div>
+
+            );
+          })}
+        </div>
+      )}
+    </div>
     </>
   );
 };

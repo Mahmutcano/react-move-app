@@ -3,7 +3,7 @@ import Card  from '../ui/PopularUi/PopularCard'
 
 const Populer = () => {
   return (
-    <div id='popular' className='h-[355px]'>
+    <div id='popular' className='popular h-[355px]'>
       <div>
         <Card />
       </div>

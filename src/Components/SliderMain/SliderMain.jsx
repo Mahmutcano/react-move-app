@@ -15,7 +15,7 @@ export default function SimpleSlider() {
     cssEase: "linear",
   };
   return (
-    <div className="relative h-auto before:bg-gradient-to-r before:z-10">
+    <div className="sliderMain relative h-auto before:bg-gradient-to-r before:z-10">
       <Slider {...settings}>
         <div>
           <img

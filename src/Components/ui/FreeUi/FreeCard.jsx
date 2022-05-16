@@ -60,7 +60,7 @@ export default function FreeCard() {
     prevArrow: <PrevBtn />,
   };
   return (
-    <div className="container px-10">
+    <div className="free container px-10">
       <FreeNavigate />
       <Title>TV+</Title>
       <Slider className="p-10" {...settings}>

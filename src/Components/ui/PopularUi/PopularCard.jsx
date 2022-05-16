@@ -63,7 +63,7 @@ export default function Card() {
     prevArrow: <PrevBtn />,
   };
   return (
-    <div className="container px-10">
+    <div className="popularNavı container px-10">
       <NavigateBar
         popular={populars}
         setFiltered={setFiltered}

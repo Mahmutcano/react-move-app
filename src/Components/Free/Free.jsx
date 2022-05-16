@@ -3,7 +3,7 @@ import FreeCard from '../ui/FreeUi/FreeCard'
 
 const Free = () => {
   return (
-    <div id='free' className='h-[355px] mt-80'>
+    <div id='free' className='free h-[355px] mt-80'>
       <FreeCard />
     </div>
   )
