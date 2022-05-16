@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import SearchBar from "./SearchBar";
 
 export default function SimpleSlider() {
   const settings = {
@@ -44,24 +45,7 @@ export default function SimpleSlider() {
             Film Tutkunları <br /> İçin...
           </h3>
         </div>
-        <div className="w-[400px] rounded-xl bg-gray-50 p-6">
-          <div className="grid gap-y-4">
-            <div className="flex gap-x-2">
-              <label className="flex-1 relative group block">
-                <input
-                  required
-                  className="h-14 px-4 border-2 border-gray-200 rounded-xl w-full transition-colors hover:border-primary-brand-color focus:border-primary-brand-color outline-none peer text-sm pt-2"
-                />
-                <span className="absolute top-0 left-0 h-full px-4 flex items-center text-sm text-gray-500 transition-all peer-focus:h-7 peer-focus:text-primary-brand-color peer-focus:text-xs peer-valid:h-7 peer-valid:text-primary-brand-color peer-valid:text-xs">
-                  Arama Yap
-                </span>
-              </label>
-            </div>
-            <button className="bg-brand-dark-color text-brand-white-color transition-colors hover:bg-primary-brand-color hover:text-white h-12 flex items-center justify-center rounded-xl w-full text-sm font-semibold ">
-              Ara
-            </button>
-          </div>
-        </div>
+      <SearchBar />
       </div>
     </div>
   );

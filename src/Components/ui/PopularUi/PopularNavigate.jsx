@@ -22,7 +22,7 @@ const NavigateBar = ({
         <li className="mr-2">
           <button
             onClick={() => setActiveGenre(0)}
-            className="inline-block py-3 px-4 rounded-xl text-white bg-brand-dark-color active"
+            className='inline-block py-3 px-4 rounded-xl hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-brand-dark-color focus:text-white'
             aria-current="page"
           >
             Hepsi
@@ -31,7 +31,7 @@ const NavigateBar = ({
         <li className="mr-2">
           <button
             onClick={() => setActiveGenre(35 || 12 || 10751 || 16 || 27)}
-            className="inline-block py-3 px-4 rounded-xl hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+            className="inline-block py-3 px-4 rounded-xl hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-brand-dark-color focus:text-white" 
           >
             Komedi
           </button>
@@ -39,7 +39,7 @@ const NavigateBar = ({
         <li className="mr-2">
           <button
             onClick={() => setActiveGenre(28 || 10752)}
-            className="inline-block py-3 px-4 rounded-xl hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+            className="inline-block py-3 px-4 rounded-xl hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-brand-dark-color focus:text-white"
           >
             Aksiyon
           </button>

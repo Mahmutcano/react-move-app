@@ -9,6 +9,7 @@
 
 
 @layer base {
+
     html,
     body {
         font-family: 'Rubik', sans-serif;
@@ -19,5 +20,85 @@
 @layer base {
     .dropdown:hover .dropdown-menu {
         display: block;
-      }
+    }
+}
+
+@layer base {
+    .searchInputs {
+        margin-top: 105px;
+        display: flex;
+    }
+
+    .search input {
+        background-color: white;
+        border: 0;
+        border-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        font-size: 18px;
+        padding: 15px;
+        height: 40px;
+        width: 400px;
+        opacity: 0.8;
+    }
+
+    .searchIcon {
+        height: 40px;
+        width: 50px;
+        background-color: #424245;
+        color: white;
+        display: grid;
+        opacity: 0.8;
+        place-items: center;
+        border: 0;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .searchIcon svg {
+        font-size: 18px;
+    }
+
+    .dataResult {
+        margin-top: 5px;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .dataResult::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dataResult .dataItem {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    .dataItem p {
+        margin-left: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: lightgrey;
+    }
+
+    #clearBtn {
+        cursor: pointer;
+    }
 }

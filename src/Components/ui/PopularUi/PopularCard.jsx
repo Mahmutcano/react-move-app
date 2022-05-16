@@ -33,6 +33,7 @@ export default function Card() {
   const API_KEY = "17238172b25c3a589bc302e2e5949b51";
   const IMAGE_PATH = "https://image.tmdb.org/t/p/w300";
 
+
   const [populars, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeGenre, setActiveGenre] = useState(0);
